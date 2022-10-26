@@ -26,7 +26,7 @@ pub async fn create(db_pool: &DBPool, body: OwnerRequest) -> Result<Owner> {
     Ok(row_to_owner(&row))
 }
 
-fn row_to_owner(row: &Row) -> Owner {
+fn row_to_owner(row: &Row) -> Owner {   
     let id: i32 = row.get(0);
     let name: String = row.get(1);
     Owner { id, name }
